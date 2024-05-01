@@ -10,4 +10,7 @@
         Index entries: 0
         Finished in 0.008s
     3.update  -----   npm install npm -g   
-    
+
+
+## basic statement
+    npm run dev 

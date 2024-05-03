@@ -14,3 +14,23 @@
 
 ## basic statement
     npm run dev 
+    PS D:\Airbnb\Airbnb_clone\airbnb-video> npm run dev
+
+
+## how to define the titile and description in the next 13
+    modify the reserved constant in the layout.tsx file 
+## how to add the font to the body element
+    in the file layout.tsx
+    import the font pakage 
+    create a constant called font and write nunito and open a object inside the parenthesis and add a subset
+    then we can expose the classname of font to the body element
+    
+
+## how to use tailwind css
+    related file: postcss.config.mjs, tailwind.config.ts, globals.css, page.tsx
+    in the globals.css
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+            effect : the padding of the text has been removed because of the direct navs reset css configuration
+    in the page.tsx ,add a css tailwind class to the div

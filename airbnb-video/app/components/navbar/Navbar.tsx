@@ -10,7 +10,7 @@ const Navbar = () => {
                 border-b-[1px]"
             >
                 <Container>
-
+                    anything like this
                 </Container>
             </div>
         </div>

@@ -19,7 +19,7 @@
 
 ## how to define the titile and description in the next 13
     modify the reserved constant in the layout.tsx file 
-## how to add the font to the body element
+## how to add the font to the body element 
     in the file layout.tsx
     import the font pakage 
     create a constant called font and write nunito and open a object inside the parenthesis and add a subset
@@ -48,4 +48,15 @@
     components/Container,return <div>Container!</div>
     in the Navbar.tsx ,import the above file and add <Container></Container>
 
+## Optimization for the content in container file
+    we want to add content directly in the navbar.tsx rather in the container file 
+    define the interface container props,it only include the children atrribute and the type is React.TeactNode ,means accepting anying node in the valid react
+    The Container component is implemented as a React function component. We extract the children attribute from the incoming props through destructuring.
+    This component renders the received children directly within a <div> element
 
+## sequence for the above optimization 
+    When the Navbar component is rendered, React first parses the JSX of the Navbar. When it encounters the Container component, it will pass "anything like this" to the Container as children.
+    Container receives this children and wraps it in a div for rendering. Therefore, what you end up seeing in the browser will be a navigation bar fixed to the top of the page, containing the text "anything like this".
+
+## client component
+    every component and page we create inside the app folder is a server component by default

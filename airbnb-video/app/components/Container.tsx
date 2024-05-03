@@ -1,6 +1,5 @@
 'use client';
 
-
 // interface containerprops is going to be children which is a type of react.react node
 // then we can assign this props to the elements so react functional component container'
 // in this way ,we can no longer write anything in the container.tsx but in the navbar.tsx file

@@ -1,6 +1,10 @@
 // import the font package
 import {Nunito} from "next/font/google";
 
+
+// import the navbar from the components/navbar/Navbar.tsx
+import Navbar from "./components/navbar/Navbar";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -28,7 +32,11 @@ export default function RootLayout({
 
     <html lang="en">
       {/* so go ahead and add the font to the head */}
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+      {/*lets collape the children inside of the body element and above them,lets write nav bar like this*/}
+      <Navbar />
+      {children}
+      </body>
     </html>
   );
 }

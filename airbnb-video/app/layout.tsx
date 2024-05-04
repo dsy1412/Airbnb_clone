@@ -8,6 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ClientOnly from "@/app/components/ClientOnly";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,7 +35,9 @@ export default function RootLayout({
       {/* so go ahead and add the font to the head */}
       <body className={font.className}>
       {/*lets collape the children inside of the body element and above them,lets write nav bar like this*/}
+      <ClientOnly>
       <Navbar />
+      </ClientOnly>
       {children}
       </body>
     </html>

@@ -10,6 +10,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientOnly from "@/app/components/ClientOnly";
 
+
+import Modal from "./components/modals/Modal";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -36,6 +40,7 @@ export default function RootLayout({
       <body className={font.className}>
       {/*lets collape the children inside of the body element and above them,lets write nav bar like this*/}
       <ClientOnly>
+        <Modal title="Login" isOpen={true} actionLabel="my password"  />
       <Navbar />
       </ClientOnly>
       {children}

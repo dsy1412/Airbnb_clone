@@ -184,3 +184,6 @@
     The specific behavior of useEffect
         Set the mounting status: When the ClientOnly component is executed in the client's React environment, useEffect will be triggered and setHasMounted(true) will be executed. This operation changes the hasMounted status from false to true.
         Trigger re-rendering: state update (setHasMounted(true)) will cause the component to re-render. Since hasMounted is now true, the component will render its children, which in this case is <Navbar />.
+
+
+## 

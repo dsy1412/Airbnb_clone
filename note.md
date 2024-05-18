@@ -14,7 +14,7 @@
 
 ## basic statement
     npm run dev 
-    PS D:\Airbnb\Airbnb_clone\airbnb-video> npm run dev
+    PS D:\Airbnb\Airbnb_clone\airbnb-clone> npm run dev
 
 
 ## how to define the titile and description in the next 13

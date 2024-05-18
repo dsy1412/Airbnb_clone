@@ -11,6 +11,8 @@
         Finished in 0.008s
     3.update  -----   npm install npm -g   
 
+## when there is problem in configuration for git
+    chose "git" and the environment as D:Airbnb\Airbnb
 
 ## basic statement
     npm run dev 
@@ -176,6 +178,7 @@
         <ClientOnly>
         <Navbar />
         </ClientOnly>
+    output : in this situation ,when refresh for a brief seconde the navbar will not exist this make it possible that how many times I refresh or click on the page I can no longer get the hydration error
     this will be client only components
     how to work:
         When your app renders on the server, the useState hook in the ClientOnly component initializes hasMounted to false, and because useEffect is not executed on the server side, hasMounted remains false.
@@ -186,4 +189,4 @@
         Trigger re-rendering: state update (setHasMounted(true)) will cause the component to re-render. Since hasMounted is now true, the component will render its children, which in this case is <Navbar />.
 
 
-## 
+## in the component of modal

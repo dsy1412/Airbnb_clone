@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className={font.className}>
       {/*lets collape the children inside of the body element and above them,lets write nav bar like this*/}
       <ClientOnly>
-        <Modal title="Login" isOpen={true} actionLabel="my password"  />
+        <Modal  isOpen />
       <Navbar />
       </ClientOnly>
       {children}

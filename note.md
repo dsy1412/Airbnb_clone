@@ -190,3 +190,50 @@
 
 
 ## in the component of modal
+
+    <Modal />
+     |
+     |--- isOpen (决定模态框是否显示)
+          |
+          |--- disabled (决定模态框中的操作是否可用)
+               |
+               |-- YES (所有操作禁用)
+               |    |
+               |    |-- onClose
+               |    |-- onSubmit
+               |    |-- title, body, actionLabel (显示基本信息但不可操作)
+               |
+               |-- NO (操作可用)
+                    |
+                    |-- has secondaryAction? (是否有次要操作)
+                         |
+                         |-- YES (有次要操作)
+                         |    |
+                         |    |-- secondaryAction, secondaryActionLabel (处理并显示次要操作按钮)
+                         |    |-- onClose, onSubmit, title, body, actionLabel (显示并处理主要操作)
+                         |
+                         |-- NO (无次要操作)
+                              |
+                              |-- onClose, onSubmit, title, body, actionLabel (仅显示并处理主要操作)
+
+    
+    Initialization when the component is first rendered
+        useState(isOpen) 会根据传入的 isOpen 参数初始化 showModal 状态。这意味着如果初始时 isOpen 为 true，模态框就会显示
+
+    
+    Response when the external isOpen parameter changes:
+        The useEffect hook function will be triggered when the parent component or external state of the <Modal /> 
+        component changes, causing the incoming isOpen parameter to change. This useEffect will update the internal showModal state based on the new isOpen value. In this way, the display state of the modal can be synchronized with the external state.
+    
+    Since there is only [isOpen] in the useEffect dependency array, this means that setShowModal will only be executed when the isOpen state changes.
+    
+    Provides a state control mechanism within the component
+        With the setShowModal function, the showModal state can be changed inside the component when needed. For example, when handling the close button event, you can hide the modal via setShowModal(false) even though the outer isOpen state is still true.
+
+    与网页交互：
+        使用了 CSS 类来控制模态框的位置、透明度和过渡效果。当 showModal 为 true 时，模态框显示在屏幕中央，透明度为完全不透明（opacity-100）；如果 showModal 为 false，模态框位置下移（translate-y-full），并且完全透明（opacity-0）。
+        关闭按钮的交互: 在模态框的顶部有一个关闭按钮，该按钮触发 handleClose 函数。这个函数会检查 disabled 状态，如果未禁用，则将 showModal 状态设置为 false，并在 300 毫秒后执行 onClose 回调。
+
+    提交和次要操作按钮:
+        如果定义了 secondaryAction 和 secondaryActionLabel，会显示一个次要操作按钮，点击这个按钮会触发 handleSecondaryAction 函数，该函数会调用 secondaryAction 回调。
+        另外有一个提交按钮，显示由 actionLabel 指定的文本，点击此按钮会触发 handleSubmit 函数，该函数执行 onSubmit 回调。

@@ -12,7 +12,7 @@
     3.update  -----   npm install npm -g   
 
 ## when there is problem in configuration for git
-    chose "git" and the environment as D:Airbnb\Airbnb
+    chose "git" and the environment as D:\airbnb_clone\Airbnb_clone
 
 ## basic statement
     npm run dev 
